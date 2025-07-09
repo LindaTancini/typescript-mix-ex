@@ -76,11 +76,53 @@
 
 // Programmazione a Oggetti (OOP)
 
-// Esercizio 7
+// Esercizio 7 (Crea una classe Animale con proprietà nome e metodo verso() che stampa "Suono generico".)
+class Animale {
+  nome: string;
 
-// Esercizio 8
+  constructor(nome: string) {
+    this.nome = nome;
+  }
+  verso(): void {
+    console.log(`Sono il verso dell'animale ${this.nome}`);
+  }
+}
+const animale1 = new Animale("Gatto");
+animale1.verso();
 
-// Esercizio 9
+// Esercizio 8 (Crea una classe Gatto che estende Animale e sovrascrive verso() per stampare "Miao".)
+
+class Gatto extends Animale {
+  verso(): void {
+    console.log("Miao");
+  }
+}
+const felix = new Gatto("Felix");
+
+felix.verso();
+
+// Esercizio 9 (Usa modificatori public, private, readonly nelle proprietà e verifica gli errori.)
+{
+  class Prodotto {
+    public nome: string;
+    private prezzo: number;
+    readonly id: number;
+
+    constructor(nome: string, prezzo: number, id: number) {
+      this.nome = nome;
+      this.prezzo = prezzo;
+      this.id = id;
+    }
+    descrizioneProdotto(): void {
+      console.log(`Il prezzo del prodotto ${this.nome} è di ${this.prezzo}`);
+    }
+  }
+  const prodotto1 = new Prodotto("Maglia", 9.99, 1);
+  prodotto1.descrizioneProdotto();
+  console.log(prodotto1.nome);
+  //console.log(prodotto1.prezzo) //essendo private non legge il valore
+  console.log(prodotto1.id); // solo lettura
+}
 
 // Type Inference e controllo dei tipi
 

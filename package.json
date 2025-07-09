@@ -4,5 +4,8 @@
   },
   "scripts": {
     "dev": "npx ts-node esercizi.ts"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.36.0"
   }
 }

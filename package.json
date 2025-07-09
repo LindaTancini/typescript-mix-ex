@@ -3,7 +3,7 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "dev": "npx ts-node esercizi.ts"
+    "1": "npx ts-node 01/esercizi.ts"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^8.36.0"

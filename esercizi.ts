@@ -29,11 +29,50 @@
 
 // Interfacce e tipi personalizzati
 
-// Esercizio 4
+// Esercizio 4 (Crea un’interfaccia User con: id: number, name: string, e isAdmin?: boolean.)
+{
+  interface User {
+    id: number;
+    name: string;
+    isAdmin?: boolean;
+  }
+  const user: User = { id: 123, name: "Linda", isAdmin: true };
+}
 
-// Esercizio 5
+// Esercizio 5 (Crea un array di utenti User[] e una funzione che filtra solo quelli con isAdmin: true.)
+{
+  interface User {
+    id: number;
+    name: string;
+    isAdmin?: boolean;
+  }
+  const users: User[] = [
+    { id: 1, name: "Alice", isAdmin: true },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie", isAdmin: false },
+    { id: 4, name: "Linda", isAdmin: true },
+  ];
+  function getUser(userArray: User[]): User[] {
+    return userArray.filter((e) => e.isAdmin === true);
+  }
 
-// Esercizio 6
+  const personUsers = getUser(users);
+  console.log(personUsers);
+}
+// Esercizio 6 ( Definisci un tipo Product con: id, name, price, e usalo per creare un carrello.)
+{
+  type Product = { id: number; name: string; price: number };
+  let cart: Product[] = [
+    { id: 124, name: "Scarpe", price: 59.99 },
+    { id: 125, name: "Cintura", price: 19.99 },
+  ];
+
+  function getCartTotal(cart: Product[]): number {
+    return cart.reduce((total, product) => total + product.price, 0);
+  }
+
+  console.log("Totale carrello:", getCartTotal(cart).toFixed(2));
+}
 
 // Programmazione a Oggetti (OOP)
 

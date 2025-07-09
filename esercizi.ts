@@ -126,6 +126,26 @@ felix.verso();
 
 // Type Inference e controllo dei tipi
 
-// Esercizio 10
+// Esercizio 10 (Crea una variabile senza tipo esplicito, poi prova ad assegnarle un valore incompatibile.)
+{
+  let nome = "Linda";
+  //nome = 2; // Type 'number' is not assignable to type 'string'. Non può essere riassegnato con un valore diverso
+}
 
-// Esercizio 11
+// Esercizio 11 (Crea una funzione stampaLunghezza(valore: unknown): string che usa typeof o instanceof per restituire info basata sul tipo.)
+{
+  function stampaLunghezza(valore: unknown): string {
+    if (typeof valore === "string") {
+      return `Stringa con lunghezza ${valore.length}`;
+    } else if (typeof valore === "number") {
+      return `Sono il numero ${valore}`;
+    } else if (Array.isArray(valore)) {
+      return `Sono un array con ${valore.length} elementi`;
+    } else {
+      return `Tipo non gestito`;
+    }
+  }
+  console.log(stampaLunghezza("Ciao"));
+  console.log(stampaLunghezza(567));
+  console.log(stampaLunghezza([1, 2, 3, 4, 5, 6, 7]));
+}

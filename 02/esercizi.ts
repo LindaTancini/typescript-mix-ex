@@ -54,11 +54,34 @@
 
 // Interfacce e Oggetti
 
-// Esercizio 7
+// Esercizio 7 (Crea un'interfaccia Libro con: titolo: string, autore: string, annoPubblicazione: number.)
+{
+  interface Libro {
+    titolo: string;
+    autore: string;
+    annoPubblicazione: number;
+  }
+  // Esercizio 8 (Crea una funzione mostraLibro che accetta un oggetto Libro e stampa una descrizione.)
+  function mostraLibro(libro: Libro): void {
+    console.log(
+      `Il libro "${libro.titolo}" scritto da ${libro.autore} è stato pubblicato nel ${libro.annoPubblicazione}`
+    );
+  }
+  mostraLibro({
+    titolo: "Forget me not",
+    autore: "Julie Soto",
+    annoPubblicazione: 2023,
+  });
+  // Esercizio 9 (Crea un array di Libro[] e una funzione che filtra solo quelli pubblicati dopo il 2010.)
 
-// Esercizio 8
-
-// Esercizio 9
+  const libri: Libro[] = [
+    { titolo: "Il nome della rosa", autore: "Eco", annoPubblicazione: 1980 },
+    { titolo: "La strada", autore: "McCarthy", annoPubblicazione: 2006 },
+    { titolo: "Forget me not", autore: "Julie Soto", annoPubblicazione: 2023 },
+  ];
+  const recenti = libri.filter((e) => e.annoPubblicazione > 2010);
+  console.log(recenti);
+}
 
 //  Tipi Avanzati: Type Alias, Union, Literal Types
 

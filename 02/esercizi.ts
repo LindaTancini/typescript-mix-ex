@@ -27,11 +27,30 @@
 
 // Array, Tuple e Union Types
 
-// Esercizio 4
+// Esercizio 4 (Crea un array di stringhe con i nomi di 5 animali.)
+{
+  const animali: string[] = ["gatto", "cane", "coniglio", "capra", "pinguino"];
+  console.log(animali);
+}
 
-// Esercizio 5
+// Esercizio 5 (Crea una tupla [string, number] che rappresenta un prodotto con nome e prezzo.)
+{
+  const prodotto: [string, number] = ["Jeans", 29.99];
+  console.log(prodotto);
+}
 
-// Esercizio 6
+// Esercizio 6 (Crea una funzione stampaValore che accetta un parametro number | string e stampa un messaggio diverso per ogni tipo.)
+{
+  function stampaValore(val: number | string): void {
+    if (typeof val === "number") {
+      console.log(`il valore è il numero ${val}`);
+    } else if (typeof val === "string") {
+      console.log(`il valore è la seguente stringa: ${val}`);
+    }
+  }
+  stampaValore(3);
+  stampaValore("mobiletto");
+}
 
 // Interfacce e Oggetti
 

@@ -249,6 +249,23 @@
 
 // Oggetti come parametri
 
-// Esercizio 23
-
-// Esercizio 24
+// Esercizio 23 (Crea un'interfaccia Studente con nome: string, voto: number, presente: boolean.)
+{
+  interface Studente {
+    nome: string;
+    voto: number;
+    presente: boolean;
+  }
+  // Esercizio 24 (Crea una funzione valutaStudente che accetta uno Studente e restituisce una stringa descrittiva.)
+  function valutaStudente(studente: Studente): void {
+    const presenza = studente.presente ? "presente" : "assente";
+    console.log(
+      `L'alunno ${studente.nome} con voto ${studente.voto}/10 è ${presenza}`
+    );
+  }
+  valutaStudente({
+    nome: "Valeria",
+    voto: 7,
+    presente: true,
+  });
+}

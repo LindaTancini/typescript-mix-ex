@@ -1,10 +1,29 @@
 // Tipi di base e Funzioni
 
-// Esercizio 1
+// Esercizio 1 (Crea una funzione moltiplica che accetta due numeri e restituisce il risultato.)
+{
+  function moltiplica(n1: number, n2: number): number {
+    return n1 * n2;
+  }
+  console.log(moltiplica(2, 2));
+}
 
-// Esercizio 2
+// Esercizio 2 (Crea una funzione inverti che accetta una stringa e la restituisce al contrario.)
+{
+  function inverti(a: string): string {
+    return a.split("").reverse().join("");
+  }
+  console.log(inverti("Fata"));
+}
 
-// Esercizio 3
+// Esercizio 3 (Scrivi una funzione isPari che accetta un numero e restituisce un booleano.)
+
+{
+  function isPari(n: number): boolean {
+    return n % 2 === 0;
+  }
+  console.log(isPari(4));
+}
 
 // Array, Tuple e Union Types
 

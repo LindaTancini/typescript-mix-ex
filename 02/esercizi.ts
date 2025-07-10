@@ -229,9 +229,23 @@
 
 // Funzioni con parametri opzionali e default
 
-// Esercizio 21
+// Esercizio 21 (Crea una funzione saluta(nome: string, titolo?: string) che stampa "Ciao, [titolo] nome".)
+{
+  function saluta(nome: string, titolo?: string): void {
+    if (titolo) {
+      console.log(`Ciao , ${titolo} ${nome}`);
+    } else {
+      console.log(`Ciao, ${nome}`);
+    }
+  }
+}
 
-// Esercizio 22
+// Esercizio 22 (Crea una funzione potenza(base: number, esponente: number = 2) che restituisce base elevato a esponente.)
+{
+  function potenza(base: number, esponente: number = 2): void {
+    console.log(base ** esponente);
+  }
+}
 
 // Oggetti come parametri
 

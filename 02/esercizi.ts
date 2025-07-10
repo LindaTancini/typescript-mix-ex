@@ -85,11 +85,30 @@
 
 //  Tipi Avanzati: Type Alias, Union, Literal Types
 
-// Esercizio 10
+// Esercizio 10 (Crea un tipo RuoloUtente = "admin" | "editor" | "viewer")
+{
+  type RuoloUtente = "admin" | "editor" | "viewer";
+  // Esercizio 11 (Crea una funzione permessi che accetta un RuoloUtente e ritorna una descrizione testuale.)
+  function permessi(ruolo: RuoloUtente): string {
+    switch (ruolo) {
+      case "admin":
+        return "Accesso completo";
+      case "editor":
+        return "Accesso in scrittura";
+      case "viewer":
+        return "Sola lettura";
+    }
+  }
+  console.log(permessi("admin"));
+  console.log(permessi("editor"));
+  console.log(permessi("viewer"));
+}
 
-// Esercizio 11
-
-// Esercizio 12
+// Esercizio 12 (Crea un tipo Punto per rappresentare { x: number, y: number }.)
+{
+  type Punto = { x: number; y: number };
+  const cordinate: Punto = { x: 12, y: 19 };
+}
 
 // Classi e OOP
 

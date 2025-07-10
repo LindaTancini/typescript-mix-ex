@@ -112,11 +112,63 @@
 
 // Classi e OOP
 
-// Esercizio 13
+// Esercizio 13 (Crea una classe Contatore con una proprietà valore: number e metodi incrementa() e decrementa().)
+{
+  class Contatore {
+    valore: number = 0;
 
-// Esercizio 14
+    incrementa() {
+      this.valore++;
+    }
 
-// Esercizio 15
+    decrementa() {
+      this.valore--;
+    }
+  }
+  // Creazione di un'istanza della classe
+  const mioContatore = new Contatore();
+
+  // Uso dei metodi sull'istanza
+  mioContatore.incrementa();
+  mioContatore.incrementa();
+  mioContatore.decrementa();
+
+  console.log(mioContatore.valore);
+}
+
+// Esercizio 14 (Crea una classe Persona con proprietà nome, età, e un metodo saluta() che stampa "Ciao, sono {nome}".)
+{
+  class Persona {
+    nome: string;
+    eta: number;
+
+    constructor(nome: string, eta: number) {
+      this.nome = nome;
+      this.eta = eta;
+    }
+
+    saluta(): void {
+      console.log(`Ciao, sono ${this.nome} e ho ${this.eta} anni`);
+    }
+  }
+  const p1 = new Persona("Linda", 29);
+  p1.saluta();
+}
+
+// Esercizio 15 (Aggiungi alla classe Persona un campo readonly id.)
+{
+  class Persona {
+    nome: string;
+    eta: number;
+    readonly id: number;
+
+    constructor(nome: string, eta: number, id: number) {
+      this.nome = nome;
+      this.eta = eta;
+      this.id = id;
+    }
+  }
+}
 
 // Modificatori di accesso
 

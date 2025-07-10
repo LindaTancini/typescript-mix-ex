@@ -203,9 +203,29 @@
 
 // Type Inference e controllo dei tipi
 
-// Esercizio 19
+// Esercizio 19 (Crea una variabile isOnline = true e prova ad assegnarle una stringa. Verifica l’errore.)
+{
+  let isOnline = true;
+  // isOnline = "si"; // l'errore - > Type 'string' is not assignable to type 'boolean'
+}
 
-// Esercizio 20
+// Esercizio 20 (Crea una funzione descrizione(valore: unknown) che usa typeof per restituire informazioni sul tipo ricevuto (string, number, boolean...).)
+{
+  function descrizione(valore: unknown): void {
+    if (typeof valore === "string") {
+      console.log("sono una stringa");
+    } else if (typeof valore === "number") {
+      console.log("sono un numero");
+    } else if (typeof valore === "boolean") {
+      console.log("sono un valore booleano");
+    } else {
+      console.log("tipo non riconosciuto");
+    }
+  }
+  descrizione("rana");
+  descrizione(7);
+  descrizione(true);
+}
 
 // Funzioni con parametri opzionali e default
 

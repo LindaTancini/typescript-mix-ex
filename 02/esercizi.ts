@@ -172,11 +172,34 @@
 
 // Modificatori di accesso
 
-// Esercizio 16
+// Esercizio 16 (Crea una classe Banca con una proprietà privata saldo e metodi deposita() e preleva().)
+{
+  class Banca {
+    // Esercizio 17 (Proteggi saldo in modo che non sia accessibile direttamente dall’esterno.)
+    private saldo: number = 100;
 
-// Esercizio 17
+    deposita(): void {
+      this.saldo++;
+    }
 
-// Esercizio 18
+    preleva(): void {
+      this.saldo--;
+    }
+    // Esercizio 18 ( Aggiungi un metodo pubblico visualizzaSaldo().)
+    visualizzaSaldo(): void {
+      console.log(`Il tuo saldo attuale è : ${this.saldo}`);
+    }
+  }
+
+  const conto = new Banca();
+  conto.visualizzaSaldo();
+
+  conto.deposita();
+  conto.visualizzaSaldo();
+
+  conto.preleva();
+  conto.visualizzaSaldo();
+}
 
 // Type Inference e controllo dei tipi
 

@@ -4,7 +4,8 @@
   },
   "scripts": {
     "1": "npx ts-node 01/esercizi.ts",
-    "2": "npx ts-node 02/esercizi.ts"
+    "2": "npx ts-node 02/esercizi.ts",
+    "3": "npx ts-node 03/esercizi.ts"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^8.36.0"

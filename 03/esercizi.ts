@@ -116,5 +116,44 @@
 // Modificatori di accesso
 
 // Esercizio 3.1 – Conto Corrente
+{
+  class ContoCorrente {
+    private saldo: number;
+    readonly numeroConto: string;
+    constructor() {
+      this.saldo = 100;
+      this.numeroConto = "12DFCH312";
+    }
+    deposita(importo: number) {
+      this.saldo += importo;
+    }
+    preleva(importo: number) {
+      this.saldo -= importo;
+    }
+    mostraSaldo() {
+      return this.saldo;
+    }
+  }
+  const conto = new ContoCorrente();
+  conto.deposita(80);
+  console.log(conto.mostraSaldo());
+  conto.preleva(67);
+  console.log(conto.mostraSaldo());
+}
 
 // Esercizio 3.2 – Utente con protected
+{
+  class Utente {
+    protected nome: string;
+    constructor(nome: string) {
+      this.nome = nome;
+    }
+  }
+  class Admin extends Utente {
+    mostraPrivilegi(): void {
+      console.log("Admin:", this.nome);
+    }
+  }
+  const admin = new Admin("Linda");
+  console.log(admin.nome); // errore -> Property 'nome' is protected and only accessible within class 'Utente' and its subclasses.
+}

@@ -50,11 +50,68 @@
 
 // Classi e OOP
 
-// Esercizio 2.1 – Classe Veicolo
+{
+  class Veicolo {
+    marca: string;
+    modello: string;
 
-// Esercizio 2.2 – Classe Auto (estende Veicolo)
+    constructor(marca: string, modello: string) {
+      this.marca = marca;
+      this.modello = modello;
+    }
+
+    descrivi(): void {
+      console.log("Veicolo:", this.marca, this.modello);
+    }
+  }
+
+  const veicolo = new Veicolo("Fiat", "Panda");
+  veicolo.descrivi();
+
+  class Auto extends Veicolo {
+    numeroPorte: number;
+
+    constructor(marca: string, modello: string, numeroPorte: number) {
+      super(marca, modello);
+      this.numeroPorte = numeroPorte;
+    }
+
+    descrivi(): void {
+      super.descrivi();
+      console.log("Numero porte:", this.numeroPorte);
+    }
+  }
+
+  const macchina = new Auto("Fiat", "Panda", 5);
+  macchina.descrivi();
+}
 
 // Esercizio 2.3 – Animale, Cane, Gatto
+{
+  class Animale {
+    nome: string;
+    constructor(nome: string) {
+      this.nome = nome;
+    }
+    verso(): void {
+      console.log(this.nome, "fa il verso");
+    }
+  }
+  class Gatto extends Animale {
+    verso(): void {
+      console.log("Miao");
+    }
+  }
+  class Cane extends Animale {
+    verso(): void {
+      console.log("Bau");
+    }
+  }
+  const felix = new Gatto("Felix");
+  felix.verso();
+  const luna = new Cane("Luna");
+  luna.verso();
+}
 
 // Modificatori di accesso
 

@@ -130,7 +130,95 @@
 // Modificatori di accesso
 
 // Esercizio 4 – Conto bancario avanzato
+{
+  class ContoBancario {
+    private saldo: number;
+    readonly iban: string;
+
+    constructor() {
+      this.saldo = 100;
+      this.iban = "EGPAM8492FO";
+    }
+
+    deposita(importo: number) {
+      this.saldo += importo;
+    }
+
+    preleva(importo: number) {
+      if (importo > 0) {
+        this.saldo -= importo;
+      }
+    }
+    getSaldo(): number {
+      return this.saldo;
+    }
+  }
+  const conto = new ContoBancario();
+  conto.deposita(500);
+  console.log(`Saldo attuale: €${conto.getSaldo()}`);
+  conto.preleva(200);
+  console.log(`Saldo attuale: €${conto.getSaldo()}`);
+}
 
 // Esercizio 5 – Gerarchia utenti
+{
+  class Utente {
+    protected nome: string;
+
+    constructor(nome: string) {
+      this.nome = nome;
+    }
+
+    identifica(): string {
+      return `Utente: ${this.nome}`;
+    }
+  }
+  class Moderatore extends Utente {
+    modera(): string {
+      return `Accendi a utente: ${this.nome}`;
+    }
+  }
+  class SuperAdmin extends Utente {
+    override identifica(): string {
+      return `SuperAdmin: ${this.nome}`;
+    }
+  }
+  const newUtente = new Utente("Giulia");
+  console.log(newUtente.identifica());
+  const newModeratore = new Moderatore("Lucia");
+  console.log(newModeratore.modera());
+  const newAdmin = new SuperAdmin("Chiara");
+  console.log(newAdmin.identifica());
+}
 
 // Esercizio 6 – Registro accessi (Porta)
+
+{
+  class Porta {
+    private aperta: boolean;
+
+    constructor(aperta: boolean) {
+      this.aperta = aperta;
+    }
+
+    apri(): string {
+      this.aperta = true;
+      return "La porta è stata aperta.";
+    }
+
+    chiudi(): string {
+      this.aperta = false;
+      return "La porta è stata chiusa.";
+    }
+
+    stato(): string {
+      return this.aperta ? "La porta è aperta." : "La porta è chiusa.";
+    }
+  }
+  const porta = new Porta(false);
+  console.log(porta.stato());
+  console.log(porta.apri());
+  console.log(porta.stato());
+  console.log(porta.chiudi());
+  console.log(porta.stato());
+}
